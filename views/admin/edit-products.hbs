@@ -1,0 +1,53 @@
+<body>
+    <div class="content">
+
+        <div class="row" style="background-color: #191C24; padding-right: 20%;">
+            <div>
+                <h3 class="text-primary" style="background-color: #191C24; margin: 0; padding-left: 2%;">Edit Products
+                </h3>
+            </div>
+
+            <form action="/admin/edit-products/{{products._id}}" method="post" enctype="multipart/form-data" id="form"
+                style="background-color: #191C24; margin-left: auto; margin-right: auto;">
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input name="name" type="text" class="form-control" id="name" aria-describedby="" value="{{products.name}}"
+                        placeholder="Enter product name" style="background-color: aliceblue;">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Price</label>
+                    <input name="price" type="number" class="form-control" id="price" value="{{products.price}}"
+                        placeholder="Enter price" style="background-color: aliceblue;">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Description</label>
+                    <input name="description" type="text" class="form-control" id="description" value="{{products.description}}"
+                        placeholder="About the product" style="background-color: aliceblue; height: 100px;">
+                </div>
+                <div class="mb-3">
+                    <select name="category" class="form-control" >
+                        <option selected>{{products.category}}</option>
+                        {{#each category}}
+                        <option value="{{this.category}}"> {{this.category}} </option>
+                        {{/each}}
+                    </select>
+
+                </div>
+                <div class="mb-3">
+                    <label>Add images</label>
+                    <img src="/productImages/{{products._id}}0.jpg" alt="" style="width: 100px;height: auto;" id="images">
+                    <input name="images" type="file" class="form-control" multiple style="background-color: aliceblue;" onchange="viewImage(event)" >
+                </div>
+                <button type="submit" class="btn btn-primary" value="uploadImages">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+
+<script>
+    function viewImage(event){
+        document.getElementById('images').src = URL.createObjectURL(event.target.files[0])
+    }
+</script>

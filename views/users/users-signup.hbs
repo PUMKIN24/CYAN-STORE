@@ -1,0 +1,82 @@
+
+
+<section class="h-100 bg-light">
+
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card card-registration my-4">
+          <div class="row g-0">
+
+            <div class="col-xl-6 d-none d-xl-block">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                alt="Sample photo" class="img-fluid"
+                style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+              <div class="centered">PORSCHE STORE</div>
+            </div>
+
+            <div class="col-xl-6">
+              <div class="card-body p-md-5 text-black">
+                <h3 class="mb-5 text-uppercase">SIGNUP FORM</h3>
+                <form action="/signup" id="form" method="post" class="mx-1 mx-md-4">
+                {{#if emailError}}
+                <p class="text-danger">{{emailError}}</p>
+                {{/if}}
+                 {{#if twilioErrror}}
+                <p class="text-danger">{{twilioErrror}}</p>
+                {{/if}}
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text"  class="form-control form-control-lg" name="firstname" id="firstname" placeholder="First name"/>
+                        {{!-- <label class="form-label" for="form3Example1m">First name</label> --}}
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text"  class="form-control form-control-lg" name="lastname" id="lastname" placeholder="last name"/>
+                        {{!-- <label class="form-label" for="form3Example1n">Last name</label> --}}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="text"  class="form-control form-control-lg" name="username" id="username" placeholder="Username"/>
+                    {{!-- <label class="form-label" for="form3Example8">Username</label> --}}
+                  </div>
+
+                    <div class="form-outline mb-4">
+                      <input type="text"  class="form-control form-control-lg" name="email" id="email" placeholder="Email ID"/>
+                      {{!-- <label class="form-label" for="form3Example9">Email ID</label> --}}
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input type="password" class="form-control form-control-lg" name="password" id="password" placeholder="Password"/>
+                      {{!-- <label class="form-label" for="form3Example90">Password</label> --}}
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input type="password" class="form-control form-control-lg" name="confirmpassword" id="confirmpassword" placeholder="Confirm Password"/>
+                      {{!-- <label class="form-label" for="form3Example90">Password</label> --}}
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input type="number"  class="form-control form-control-lg" name="mobilenumber" id="mobilenumber" placeholder="Mobile Number"/>
+                      {{!-- <label class="form-label" for="form3Example99">Mobile number</label> --}}
+                    </div>
+
+                    <div class="d-flex justify-content-end pt-3">
+                      {{!-- <button type="button" class="btn btn-light btn-lg">Reset all</button> --}}
+                      <button type="submit" class="btn btn-warning btn-lg ms-2">Submit form</button>
+                    </div>
+                </form>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
